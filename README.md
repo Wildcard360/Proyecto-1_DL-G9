@@ -28,12 +28,14 @@ De esta forma, haciendo uso de los mapas de Karnaugh se simplificaron las ecuaci
 
 5. Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada
 hasta el manejo de los 7 segmentos.
+<img width="1045" height="579" alt="image" src="https://github.com/user-attachments/assets/d3ef9f31-dc84-42ef-ada2-972de88833b6" />
 
 6. Análisis de consumo de recursos en la FPGA (LUTs, FFs, etc.) y del consumo de potencia que reporta
 las herramientas.
 
 
 8. Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas.
-Los principales problemas hallados dentro del trabajo se debieron a la falta de experiencia con Verilog y con la tangnano 9k
-
+Los principales problemas hallados dentro del trabajo se debieron a la falta de experiencia con Verilog y con la tangnano 9k. A la hora de probar el funcionamiento de la FPGA, tuvimos problemas con las definiciones, especificamente, para los inputs, pusimos un valor de drive de 8 mA, siendo que Verilog tira un error si se define un valor de corriente concreto para un input.
+Para solucionar esto, nos fijamos en el template de los constraints para definir individualmente sus atributos.
+Adicionalmente, tuvimos que adaptar el diseño para usar jumpers hembra-macho, ya que originalmente al tratar de conectar la FPGA directo a la protoboard, vimos que las conexiones eran debiles, y al más mínimo movimiento, estas se rompían. 
 
