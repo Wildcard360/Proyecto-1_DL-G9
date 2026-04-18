@@ -33,7 +33,7 @@ Donde se ve la simulación en el testbench del módulo 7 segmentos, donde proban
 # Análisis de consumo de recursos en la FPGA (LUTs, FFs, etc.) y del consumo de potencia que reporta
 las herramientas.
 <img width="701" height="181" alt="image" src="https://github.com/user-attachments/assets/0df9055f-cfb8-41df-915b-b2838756044f" />
-Viendo que se trabajó solamente utilizando un voltaje de 3.3v y resistencias de 1k podemos definir que la potencia consumida oscila entre 10.89mW y 76.23mW
+Viendo que se trabajó solamente utilizando un voltaje de 3.3v y resistencias de 1k podemos estimar que la potencia consumida oscila entre 10.89mW y 76.23mW
 
 
 # Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas.
@@ -50,9 +50,16 @@ Adicionalmente, tuvimos que adaptar el diseño para usar jumpers hembra-macho, y
 
 
 # Anillo Oscilador
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/4c5fc694-3686-4351-b568-634cccbd84dd" />
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/f0931a8d-9b8d-4a79-94bd-09cb6ecf8f4f" />
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/915012db-6b71-4697-bc3e-87bda8c8d0d6" />
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/089ea169-7317-4ea7-98a7-427aba0ed87d" />
+<img width="579" height="691" alt="image" src="https://github.com/user-attachments/assets/4bc5d9ad-16c2-4f5b-b47e-f8c5825da3a1" />
+A
+<img width="487" height="438" alt="image" src="https://github.com/user-attachments/assets/a3687497-dd0e-4859-969d-c4352cb2b324" />
+B
+<img width="601" height="484" alt="image" src="https://github.com/user-attachments/assets/0bebd65b-3a76-448b-93d5-08fb9303b81a" />
+C
+<img width="550" height="409" alt="image" src="https://github.com/user-attachments/assets/dbad629f-2357-4b4a-a5ac-349eacf83166" />
+D
+
+
+
 
 
