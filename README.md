@@ -2,7 +2,7 @@
 Este es el repositorio del proyecto #1 realizado por el grupo 9 conformado por los estudiantes Gabriel Tenorio y Krisdel Guido
 
 
-El circuito en general se divide en dos módulos principales: 7 Segmentos, y Hamming.
+El circuito en general se divide en dos módulos principales: 7 Segmentos, codificación (7,4) y generador de error.
 
 #7 Segmentos
 
@@ -12,8 +12,42 @@ La parte del 7 segmentos funciona principalmente gracias a la lógica booleana d
 
 Para el diseño de los switches, se toma en cuenta que se tiene que aplicar una resistencia pull down, para establecer el estado 0 como default en las entradas percibidas por la tangnano. En este diseño se utilizaron unicamente resistencias de 1k Ohm para el pull down, y concretamente se utilizaron 7 resistencias de 330 Ohm para cada segmento individual del 7 segmentos. El 7 Seg utilizado es de Catodo común para facilitar las conexiones. Especificamente, los switches permitían una tensión de 3.3v, la cual era medida por las entradas de la tangnano, especificamente de 3.3v igualmente, las salidas del 7 segmentos, emitían una tensión de 1.8v.
 
-#Hamming.
-Para la parte del circuito, básicamente es el mismo diseño, con la excepción de que en este caso tenemos 3 inputs adicionales a tomar en cuenta en los constraints, estos switches operando igual con una tensión de 3.3v y resistencias de pull down de 1k Ohm
+## Codificación (7,4) y paridad par.
+
+Para la parte del circuito, básicamente es el mismo diseño, con la excepción de que en este caso tenemos 3 inputs adicionales a tomar en cuenta en los constraints, estos switches operando igual con una tensión de 3.3v y resistencias de pull down de 1k Ohm.
+
+El código Hamming (7,4) es un código de detección y corrección de errores que utiliza bits de paridad para identificar errores en la transmisión de datos.
+Se utilizan 3 bits de paridad (p1, p2, p4) para proteger 4 bits de datos (d1, d2, d3, d4).
+
+Las ecuaciones de paridad se calculan con XOR:
+
+- p1 = d1 ⊕ d2 ⊕ d4  
+- p2 = d1 ⊕ d3 ⊕ d4  
+- p4 = d2 ⊕ d3 ⊕ d4
+
+  ```verilog
+module hamming(
+    input [3:0] datos, //entrada del switch datos
+    output [6:0] hamming_codigo // salida con el codigo hamming (7 bits) 
+    ); 
+    reg p1, p2, p4; // bits de paridad
+    always @(*) begin
+        p1 = datos[0] ^ datos[1] ^ datos[3]; // p1 se calcula con d1, d2 y d4 con XOR
+        p2 = datos[0] ^ datos[2] ^ datos[3];
+        p4 = datos[1] ^ datos[2] ^ datos[3];
+    end
+    // aqui se ordenan los bits del codigo hamming, los bits de datos se colocan en las posiciones 3, 5, 6 y 7, 
+    //mientras que los bits de paridad se colocan en las posiciones 1, 2 y 4
+    assign hamming_codigo = {
+    datos[3],  // d4 (7)
+    datos[2],  // d3 (6)
+    datos[1],  // d2 (5)
+    p4,         // p4 (4)
+    datos[0],  // d1 (3)
+    p2,         // p2 (2)
+    p1          // p1 (1)
+    };
+endmodule```
 
 
 # Karnaugh
