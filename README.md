@@ -126,9 +126,11 @@ De esta forma, haciendo uso de los mapas de Karnaugh se simplificaron las ecuaci
 # Simulación
 <img width="1045" height="579" alt="image" src="https://github.com/user-attachments/assets/d3ef9f31-dc84-42ef-ada2-972de88833b6" />
 Donde se ve la simulación en el testbench del módulo 7 segmentos, donde probando la lógica con las diferentes entradas, se ve que concuerdan los datos simulados con los resultados esperados.
+
 ## Testbench codificación (7,4)
 <img width="795" height="182" alt="Hamming" src="https://github.com/user-attachments/assets/b3475134-6e6e-4a1b-a369-90af07949ce9" />
-El Test WM no se pudo obtener debido a que no aparecian las ondas, sin embargo se imprimió el resultado en la terminal y los datos evidencian que se calcula bien los bits de paridad.
+El make wm no se pudo obtener debido a que no aparecian las ondas, sin embargo se imprimió el resultado en la terminal y los datos evidencian que se calcula bien los bits de paridad.
+
 ## Testbench generador de error
 <img width="1600" height="899" alt="Error" src="https://github.com/user-attachments/assets/6feda2ae-4061-44e3-a187-82f3bb3a580b" />
 <img width="1600" height="899" alt="error 2" src="https://github.com/user-attachments/assets/6e2d38e6-b1b6-4f6f-bbf4-a99bec6fc652" />
