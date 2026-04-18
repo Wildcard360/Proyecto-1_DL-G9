@@ -12,7 +12,7 @@ La parte del 7 segmentos funciona principalmente gracias a la lógica booleana d
 
 Para el diseño de los switches, se toma en cuenta que se tiene que aplicar una resistencia pull down, para establecer el estado 0 como default en las entradas percibidas por la tangnano. En este diseño se utilizaron unicamente resistencias de 1k Ohm para el pull down, y concretamente se utilizaron 7 resistencias de 330 Ohm para cada segmento individual del 7 segmentos. El 7 Seg utilizado es de Catodo común para facilitar las conexiones. Especificamente, los switches permitían una tensión de 3.3v, la cual era medida por las entradas de la tangnano, especificamente de 3.3v igualmente, las salidas del 7 segmentos, emitían una tensión de 1.8v.
 
-## Codificación (7,4) y paridad par.
+# Codificación (7,4) y paridad par.
 
 Para la parte del circuito, básicamente es el mismo diseño, con la excepción de que en este caso tenemos 3 inputs adicionales a tomar en cuenta en los constraints, estos switches operando igual con una tensión de 3.3v y resistencias de pull down de 1k Ohm.
 
@@ -52,6 +52,69 @@ module hamming(
 
 endmodule
 ```
+Tenemos la entrada datos proveniente del switch datos, es una entrada de 4 bits que son los utilizados para calcular el codigo hamming y luego enviarse a la salida como codigo hamming.
+## Diagrama de bloques módulo codificación (7,4)
+<img width="817" height="200" alt="hamming" src="https://github.com/user-attachments/assets/77c6cb6b-617c-4f25-b55c-37ff0489f2cd" />
+
+# Generador de error
+El módulo simula fallas en la transmisión del código Hamming, alterando intencionalmente uno de sus bits. Recibe como entrada un código Hamming de 7 bits y una señal de control de 3 bits (`s`), la cual indica en qué posición se desea introducir un error.
+
+### Funcionamiento
+- Primero se copia el código original en una variable interna.
+- Luego, dependiendo del valor de `s`, se invierte un bit específico usando la operación NOT (`~`).
+- Finalmente, se entrega el nuevo código con error en la salida.
+
+La señal `s` determina qué bit se va a modificar:
+
+| s   | Acción            |
+|-----|-------------------|
+| 000 | No hay error      |
+| 001 | Invierte p1       |
+| 010 | Invierte p2       |
+| 011 | Invierte d1       |
+| 100 | Invierte p4       |
+| 101 | Invierte d2       |
+| 110 | Invierte d3       |
+| 111 | Invierte d4       |
+
+# Módulo
+```verilog
+module error(
+    input [2:0] s, // entrada del switch s para seleccionar el bit a modificar
+    input [6:0] hamming, // codigo hamming 
+    output [6:0] hamming_con_error // hamming con el error introducido
+);
+
+    reg [6:0] codigo_hamming; // registro para almacenar el codigo hamming con el error
+
+    always @(*) begin 
+        codigo_hamming = hamming; // iniciamos igualando el codigo hamming original al registro
+
+        // en el case se introduce el error dependiendo de s
+        case (s)
+            3'b000: codigo_hamming = hamming;           // no cambia
+            3'b001: codigo_hamming[0] = ~hamming[0];    // error en p1 
+            3'b010: codigo_hamming[1] = ~hamming[1];    // error en p2
+            3'b011: codigo_hamming[2] = ~hamming[2];    // error en d1
+            3'b100: codigo_hamming[3] = ~hamming[3];    // error en p4
+            3'b101: codigo_hamming[4] = ~hamming[4];    // error en d2
+            3'b110: codigo_hamming[5] = ~hamming[5];    // error en d3
+            3'b111: codigo_hamming[6] = ~hamming[6];    // error en d4
+        endcase
+    end
+
+    assign hamming_con_error = codigo_hamming; // se asigna el resultado a la salida
+
+endmodule
+```
+## Diagrama de bloques módulo generador de error
+<img width="1420" height="462" alt="error" src="https://github.com/user-attachments/assets/c9a1e652-ace4-4fd5-a49b-a756cb1615d3" />
+
+
+
+
+
+
 
 # Karnaugh
 Para la parte de los 7 segmentos, se utilizó la simplificación de ecuaciones booleanas con el metodo de mapas de Karnaugh.
