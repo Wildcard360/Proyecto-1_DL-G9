@@ -4,7 +4,7 @@ Este es el repositorio del proyecto #1 realizado por el grupo 9 conformado por l
 
 El circuito en general se divide en dos módulos principales: 7 Segmentos, codificación (7,4) y generador de error.
 
-#7 Segmentos
+# 7 Segmentos
 
 La parte del 7 segmentos funciona principalmente gracias a la lógica booleana de cada segmento individual. En la programación esto funciona de forma tal que el estado de encendido y apagado de cada segmento individual es determinado por una serie de compuertas lógicas, en este caso, con la interpretación de Verilog de la lógica booleana, donde cada bit de la entrada influye en el estado del segmento en cuestión. 
 
@@ -52,19 +52,20 @@ module hamming(
 
 endmodule
 ```
-Tenemos la entrada datos proveniente del switch datos, es una entrada de 4 bits que son los utilizados para calcular el codigo hamming y luego enviarse a la salida como codigo hamming.
+Tenemos la entrada datos proveniente del switch datos, es una entrada de 4 bits que son los utilizados para calcular el código hamming y luego enviarse a la salida como código hamming.
 ## Diagrama de bloques módulo codificación (7,4)
-<img width="817" height="200" alt="hamming" src="https://github.com/user-attachments/assets/77c6cb6b-617c-4f25-b55c-37ff0489f2cd" />
+<img width="817" height="200" alt="Hamming (2)" src="https://github.com/user-attachments/assets/05beffad-61ef-4a77-aafa-12087b22af25" />
+
 
 # Generador de error
-El módulo simula fallas en la transmisión del código Hamming, alterando intencionalmente uno de sus bits. Recibe como entrada un código Hamming de 7 bits y una señal de control de 3 bits (`s`), la cual indica en qué posición se desea introducir un error.
+El módulo simula fallas en la transmisión del código Hamming, alterando intencionalmente uno de sus bits. Recibe como entrada un código Hamming de 7 bits y una señal de control de 3 bits (s), la cual indica en qué posición se desea introducir un error.
 
 ### Funcionamiento
 - Primero se copia el código original en una variable interna.
-- Luego, dependiendo del valor de `s`, se invierte un bit específico usando la operación NOT (`~`).
+- Luego, dependiendo del valor de s, se invierte un bit específico usando la operación NOT (~).
 - Finalmente, se entrega el nuevo código con error en la salida.
 
-La señal `s` determina qué bit se va a modificar:
+La señal s determina qué bit se va a modificar:
 
 | s   | Acción            |
 |-----|-------------------|
@@ -108,11 +109,7 @@ module error(
 endmodule
 ```
 ## Diagrama de bloques módulo generador de error
-<img width="1420" height="462" alt="error" src="https://github.com/user-attachments/assets/c9a1e652-ace4-4fd5-a49b-a756cb1615d3" />
-
-
-
-
+<img width="1420" height="462" alt="Error (2)" src="https://github.com/user-attachments/assets/6a9204f2-807b-43de-8e9c-ab66f7294b7c" />
 
 
 
@@ -129,6 +126,14 @@ De esta forma, haciendo uso de los mapas de Karnaugh se simplificaron las ecuaci
 # Simulación
 <img width="1045" height="579" alt="image" src="https://github.com/user-attachments/assets/d3ef9f31-dc84-42ef-ada2-972de88833b6" />
 Donde se ve la simulación en el testbench del módulo 7 segmentos, donde probando la lógica con las diferentes entradas, se ve que concuerdan los datos simulados con los resultados esperados.
+## Testbench codificación (7,4)
+<img width="795" height="182" alt="Hamming" src="https://github.com/user-attachments/assets/b3475134-6e6e-4a1b-a369-90af07949ce9" />
+El Test WM no se pudo obtener debido a que no aparecian las ondas, sin embargo se imprimió el resultado en la terminal y los datos evidencian que se calcula bien los bits de paridad.
+## Testbench generador de error
+<img width="1600" height="899" alt="Error" src="https://github.com/user-attachments/assets/6feda2ae-4061-44e3-a187-82f3bb3a580b" />
+<img width="1600" height="899" alt="error 2" src="https://github.com/user-attachments/assets/6e2d38e6-b1b6-4f6f-bbf4-a99bec6fc652" />
+
+Para el generador de error se evidencia mediante las simulaciones que sí se inserta correctamente el error según la señal de entrada deseada, para esto se simuló utilizando 3 codigos de entrada distintos y en todos insertó correctamente el error.
 
 # Análisis de consumo de recursos en la FPGA (LUTs, FFs, etc.) y del consumo de potencia que reporta
 las herramientas.
