@@ -2,7 +2,7 @@
 Este es el repositorio del proyecto #1 realizado por el grupo 9 conformado por los estudiantes Gabriel Tenorio y Krisdel Guido
 
 
-El circuito en general se divide en dos módulos principales: 7 Segmentos, codificación (7,4) y generador de error.
+El circuito en general se divide en tres módulos principales: 7 Segmentos, codificación (7,4) y generador de error.
 
 # 7 Segmentos
 
@@ -168,6 +168,13 @@ Este es el caso del anillo oscilador con 3 inversores incluyendo un cable de apr
 <img width="550" height="409" alt="image" src="https://github.com/user-attachments/assets/dbad629f-2357-4b4a-a5ac-349eacf83166" />
 Finalmente, tenemos el caso utilizando un solo inversor, con 17.3 ns de tiempo de oscilación.
 
+# Referencias
+[0] David Harris y Sarah Harris. Digital Design and Computer Architecture. RISC-V Edition. Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
+
+[1] Sipeed. 2024. Tang Nano 9K. Sipeed Wiki. Available at: https://wiki-sipeed-com.translate.goog/hardware/en/tang/Tang-Nano-9K/Nano-9K.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc. 
+
+[2] Ovising Verilog HDL Tutorials, “How to design a Hamming74 Encoder for FPGA using Verilog,” Youtube.com, June 04, 2022. https://www.youtube.com/watch?v=8VXA021mHcM.
+‌
 
 
 
