@@ -1,0 +1,155 @@
+Info: Series:GW1N-9C Device:GW1NR-9C Package:QFN88P Speed:C6/I5
+Info: Cell s[3] not found
+Info: Cell s[3] not found
+
+Info: Packing constants..
+Info: Packing Shadow RAM..
+Info: Packing GSR..
+Info: Packing IOs..
+Info: Packing diff IOs..
+Info: Packing IO logic..
+Info: Packing wide LUTs..
+Info: Packing LUT5s..
+Info: Packing LUT6s..
+Info: Packing LUT7s..
+Info: Packing LUT8s..
+Info: Packing ALUs..
+Info: Packing LUT-FFs..
+Info: Packing non-LUT FFs..
+Info: Packing PLLs..
+Info: Checksum: 0x6962f126
+
+Info: Annotating ports with timing budgets for target frequency 27.00 MHz
+Info: Checksum: 0x6962f126
+
+Info: Device utilisation:
+Info: 	                 VCC:     1/    1   100%
+Info: 	               SLICE:    16/ 8640     0%
+Info: 	                 IOB:    14/  274     5%
+Info: 	                ODDR:     0/  274     0%
+Info: 	           MUX2_LUT5:     6/ 4320     0%
+Info: 	           MUX2_LUT6:     3/ 2160     0%
+Info: 	           MUX2_LUT7:     0/ 1080     0%
+Info: 	           MUX2_LUT8:     0/ 1056     0%
+Info: 	                 GND:     1/    1   100%
+Info: 	                RAMW:     0/  270     0%
+Info: 	                 GSR:     1/    1   100%
+Info: 	                 OSC:     0/    1     0%
+Info: 	                rPLL:     0/    2     0%
+
+Info: Placed 13 cells based on constraints.
+Info: Creating initial analytic placement for 9 cells, random placement wirelen = 634.
+Info:     at initial placer iter 0, wirelen = 242
+Info:     at initial placer iter 1, wirelen = 233
+Info:     at initial placer iter 2, wirelen = 231
+Info:     at initial placer iter 3, wirelen = 231
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SLICE: wirelen solved = 231, spread = 234, legal = 240; time = 0.00s
+Info:     at iteration #1, type MUX2_LUT6: wirelen solved = 236, spread = 236, legal = 236; time = 0.00s
+Info:     at iteration #1, type VCC: wirelen solved = 236, spread = 236, legal = 236; time = 0.00s
+Info:     at iteration #1, type GSR: wirelen solved = 236, spread = 236, legal = 236; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 230, spread = 236, legal = 240; time = 0.00s
+Info: HeAP Placer Time: 0.02s
+Info:   of which solving equations: 0.00s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 240
+Info:   at iteration #5: temp = 0.000000, timing cost = 0, wirelen = 222
+Info:   at iteration #7: temp = 0.000000, timing cost = 0, wirelen = 220 
+Info: SA placement time 0.00s
+
+Info: Max delay <async> -> <async>: 15.96 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 21075,  21314) |* 
+Info: [ 21314,  21553) |* 
+Info: [ 21553,  21792) | 
+Info: [ 21792,  22031) |* 
+Info: [ 22031,  22270) |* 
+Info: [ 22270,  22509) | 
+Info: [ 22509,  22748) |* 
+Info: [ 22748,  22987) | 
+Info: [ 22987,  23226) |* 
+Info: [ 23226,  23465) | 
+Info: [ 23465,  23704) |* 
+Info: [ 23704,  23943) | 
+Info: [ 23943,  24182) | 
+Info: [ 24182,  24421) | 
+Info: [ 24421,  24660) |*********** 
+Info: [ 24660,  24899) | 
+Info: [ 24899,  25138) |****************** 
+Info: [ 25138,  25377) | 
+Info: [ 25377,  25616) |************************* 
+Info: [ 25616,  25855) |********** 
+Info: Checksum: 0xf3f85562
+Info: Find global nets...
+Info: Routing globals...
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 99 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:         99 |        0         99 |    0    99 |         0|       0.09       0.09|
+Info: Routing complete.
+Info: Router1 time 0.09s
+Info: Checksum: 0x3aa8d863
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source generador_error.s_IBUF_O_2$iob.O
+Info:  7.5  7.5    Net generador_error.s[0] budget 37.037037 ns (12,28) -> (9,2)
+Info:                Sink generador_error.codigo_hamming_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1_LUT4_F_LC.A
+Info:                Defined in:
+Info:                  ../design/top.sv:15.11-19.6
+Info:                  ../design/generadorerror.sv:2.17-2.18
+Info:  1.0  8.5  Source generador_error.codigo_hamming_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1_LUT4_F_LC.F
+Info:  0.3  8.9    Net generador_error.codigo_hamming_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1 budget 8.852009 ns (9,2) -> (9,2)
+Info:                Sink generador_error.codigo_hamming_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:159.41-159.66
+Info:                  c:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:151.13-151.15
+Info:  0.2  9.0  Source generador_error.codigo_hamming_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_LC.OF
+Info:  0.3  9.4    Net generador_error.codigo_hamming_MUX2_LUT6_O_2_I1 budget 8.852009 ns (9,2) -> (9,2)
+Info:                Sink generador_error.codigo_hamming_MUX2_LUT6_O_2_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:157.13-157.15
+Info:  0.4  9.7  Source generador_error.codigo_hamming_MUX2_LUT6_O_2_LC.OF
+Info:  1.3 11.0    Net generador_error.codigo_hamming[1] budget 8.852009 ns (9,2) -> (10,0)
+Info:                Sink ham_OBUF_O_5$iob.I
+Info:                Defined in:
+Info:                  ../design/top.sv:15.11-19.6
+Info:                  ../design/generadorerror.sv:4.18-4.35
+Info: 1.6 ns logic, 9.4 ns routing
+
+Info: Max delay <async> -> <async>: 11.01 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 26028,  26247) |* 
+Info: [ 26247,  26466) |* 
+Info: [ 26466,  26685) | 
+Info: [ 26685,  26904) | 
+Info: [ 26904,  27123) |* 
+Info: [ 27123,  27342) | 
+Info: [ 27342,  27561) |** 
+Info: [ 27561,  27780) | 
+Info: [ 27780,  27999) | 
+Info: [ 27999,  28218) |* 
+Info: [ 28218,  28437) |* 
+Info: [ 28437,  28656) | 
+Info: [ 28656,  28875) | 
+Info: [ 28875,  29094) |** 
+Info: [ 29094,  29313) | 
+Info: [ 29313,  29532) |******************* 
+Info: [ 29532,  29751) |****** 
+Info: [ 29751,  29970) |************************** 
+Info: [ 29970,  30189) |******** 
+Info: [ 30189,  30408) |*** 
+
+Info: Program finished normally.

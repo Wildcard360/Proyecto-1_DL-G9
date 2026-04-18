@@ -1,0 +1,82 @@
+$date
+	Sat Apr 11 20:31:47 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module terror $end
+$var wire 7 ! hamming_error [6:0] $end
+$var wire 7 " hamming_code [6:0] $end
+$var reg 4 # i_data [3:0] $end
+$var reg 3 $ s [2:0] $end
+$scope module e1 $end
+$var wire 7 % hamming_con_error [6:0] $end
+$var wire 3 & s [2:0] $end
+$var wire 7 ' hamming [6:0] $end
+$upscope $end
+$scope module h1 $end
+$var wire 4 ( i_data [3:0] $end
+$var wire 7 ) hamming_code [6:0] $end
+$var reg 1 * p1 $end
+$var reg 1 + p2 $end
+$var reg 1 , p4 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0,
+1+
+1*
+b111 )
+b1 (
+b111 '
+b0 &
+b110 %
+b0 $
+b1 #
+b111 "
+b110 !
+$end
+#10
+b11000 !
+b11000 %
+1,
+0+
+b11001 "
+b11001 '
+b11001 )
+b1 $
+b1 &
+b10 #
+b10 (
+#20
+b101011 !
+b101011 %
+1+
+0*
+b101010 "
+b101010 '
+b101010 )
+b10 $
+b10 &
+b100 #
+b100 (
+#30
+b1001010 !
+b1001010 %
+1*
+b1001011 "
+b1001011 '
+b1001011 )
+b11 $
+b11 &
+b1000 #
+b1000 (
+#40

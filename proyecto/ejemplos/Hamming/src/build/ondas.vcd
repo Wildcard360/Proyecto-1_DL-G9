@@ -1,0 +1,34 @@
+$date
+	Mon Apr 13 09:12:29 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module thamming $end
+$var wire 7 ! hamming_codigo [6:0] $end
+$var reg 4 " datos [3:0] $end
+$scope module prueba $end
+$var wire 4 # datos [3:0] $end
+$var wire 7 $ hamming_codigo [6:0] $end
+$var reg 1 % p1 $end
+$var reg 1 & p2 $end
+$var reg 1 ' p4 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#40
+$dumpvars
+1'
+1&
+1%
+b1111111 $
+b1111 #
+b1111 "
+b1111111 !
+$end

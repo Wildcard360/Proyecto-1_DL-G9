@@ -1,0 +1,137 @@
+Info: Series:GW1N-9C Device:GW1NR-9C Package:QFN88P Speed:C6/I5
+
+Info: Packing constants..
+Info: Packing Shadow RAM..
+Info: Packing GSR..
+Info: Packing IOs..
+Info: Packing diff IOs..
+Info: Packing IO logic..
+Info: Packing wide LUTs..
+Info: Packing LUT5s..
+Info: Packing LUT6s..
+Info: Packing LUT7s..
+Info: Packing LUT8s..
+Info: Packing ALUs..
+Info: Packing LUT-FFs..
+Info: Packing non-LUT FFs..
+Info: Packing PLLs..
+Info: Checksum: 0x4f18e04e
+
+Info: Annotating ports with timing budgets for target frequency 27.00 MHz
+Info: Checksum: 0x4f18e04e
+
+Info: Device utilisation:
+Info: 	                 VCC:     1/    1   100%
+Info: 	               SLICE:    11/ 8640     0%
+Info: 	                 IOB:    15/  274     5%
+Info: 	                ODDR:     0/  274     0%
+Info: 	           MUX2_LUT5:     0/ 4320     0%
+Info: 	           MUX2_LUT6:     0/ 2160     0%
+Info: 	           MUX2_LUT7:     0/ 1080     0%
+Info: 	           MUX2_LUT8:     0/ 1056     0%
+Info: 	                 GND:     1/    1   100%
+Info: 	                RAMW:     0/  270     0%
+Info: 	                 GSR:     1/    1   100%
+Info: 	                 OSC:     0/    1     0%
+Info: 	                rPLL:     0/    2     0%
+
+Info: Placed 15 cells based on constraints.
+Info: Creating initial analytic placement for 13 cells, random placement wirelen = 575.
+Info:     at initial placer iter 0, wirelen = 163
+Info:     at initial placer iter 1, wirelen = 163
+Info:     at initial placer iter 2, wirelen = 163
+Info:     at initial placer iter 3, wirelen = 163
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SLICE: wirelen solved = 163, spread = 179, legal = 179; time = 0.00s
+Info:     at iteration #1, type VCC: wirelen solved = 179, spread = 179, legal = 179; time = 0.00s
+Info:     at iteration #1, type GSR: wirelen solved = 179, spread = 179, legal = 179; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 163, spread = 179, legal = 180; time = 0.00s
+Info: HeAP Placer Time: 0.02s
+Info:   of which solving equations: 0.01s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 180
+Info:   at iteration #5: temp = 0.000000, timing cost = 0, wirelen = 160
+Info:   at iteration #9: temp = 0.000000, timing cost = 0, wirelen = 157 
+Info: SA placement time 0.00s
+
+Info: Max delay <async> -> <async>: 14.70 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 22339,  22794) |*** 
+Info: [ 22794,  23249) |**** 
+Info: [ 23249,  23704) | 
+Info: [ 23704,  24159) | 
+Info: [ 24159,  24614) | 
+Info: [ 24614,  25069) |************** 
+Info: [ 25069,  25524) |**** 
+Info: [ 25524,  25979) |********** 
+Info: [ 25979,  26434) | 
+Info: [ 26434,  26889) |* 
+Info: [ 26889,  27344) |* 
+Info: [ 27344,  27799) | 
+Info: [ 27799,  28254) |* 
+Info: [ 28254,  28709) |* 
+Info: [ 28709,  29164) | 
+Info: [ 29164,  29619) | 
+Info: [ 29619,  30074) | 
+Info: [ 30074,  30529) | 
+Info: [ 30529,  30984) |** 
+Info: [ 30984,  31439) |** 
+Info: Checksum: 0xb26462dc
+Info: Find global nets...
+Info: Routing globals...
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 44 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:         45 |        1         44 |    1    44 |         0|       0.07       0.07|
+Info: Routing complete.
+Info: Router1 time 0.07s
+Info: Checksum: 0x601a2fd7
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source D_IBUF_O$iob.O
+Info:  8.0  8.0    Net D budget 37.037037 ns (7,28) -> (10,1)
+Info:                Sink segments_OBUF_O_I_LUT4_F_LC.A
+Info:                Defined in:
+Info:                  ../design/top.sv:13.8-13.9
+Info:  1.0  9.0  Source segments_OBUF_O_I_LUT4_F_LC.F
+Info:  0.9  9.9    Net segments_OBUF_O_I budget 17.969519 ns (10,1) -> (11,0)
+Info:                Sink segments_OBUF_O$iob.I
+Info: 1.0 ns logic, 8.9 ns routing
+
+Info: Max delay <async> -> <async>: 9.91 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 27125,  27457) |** 
+Info: [ 27457,  27789) |* 
+Info: [ 27789,  28121) |*** 
+Info: [ 28121,  28453) |* 
+Info: [ 28453,  28785) | 
+Info: [ 28785,  29117) |**** 
+Info: [ 29117,  29449) |****** 
+Info: [ 29449,  29781) |**** 
+Info: [ 29781,  30113) |******* 
+Info: [ 30113,  30445) |******** 
+Info: [ 30445,  30777) | 
+Info: [ 30777,  31109) |** 
+Info: [ 31109,  31441) |* 
+Info: [ 31441,  31773) | 
+Info: [ 31773,  32105) | 
+Info: [ 32105,  32437) | 
+Info: [ 32437,  32769) | 
+Info: [ 32769,  33101) |** 
+Info: [ 33101,  33433) |* 
+Info: [ 33433,  33765) |* 
+
+Info: Program finished normally.
