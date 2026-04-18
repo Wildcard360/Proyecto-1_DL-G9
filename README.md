@@ -1,14 +1,30 @@
 # Proyecto-1_DL-G9
 Este es el repositorio del proyecto #1 realizado por el grupo 9 conformado por los estudiantes Gabriel Tenorio y Krisdel 
 
-Una descripción general del funcionamiento del circuito completo y de cada subsistema.
+-Una descripción general del funcionamiento del circuito completo y de cada subsistema.
+El circuito en general se divide en dos módulos principales: 7 Segmentos, y Hamming.
 
-2. Diagramas de bloques de cada subsistema y su funcionamiento fundamental, según descritos en la
-sección 8.
+7 Segmentos
 
-3. Un ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
+La parte del 7 segmentos funciona principalmente gracias a la lógica booleana de cada segmento individual. En la programación esto funciona de forma tal que el estado de encendido y apagado de cada segmento individual es determinado por una serie de compuertas lógicas, en este caso, con la interpretación de Verilog de la lógica booleana, donde cada bit de la entrada influye en el estado del segmento en cuestión. 
 
-4. Un ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos.
+<img width="1826" height="1425" alt="IMG_8211" src="https://github.com/user-attachments/assets/3a729e57-f76f-4bff-ade6-dd16d1a54786" />
+
+Para el diseño de los switches, se toma en cuenta que se tiene que aplicar una resistencia pull down, para establecer el estado 0 como default en las entradas percibidas por la tangnano. En este diseño se utilizaron unicamente resistencias de 1k Ohm para el pull down, y concretamente se utilizaron 7 resistencias de 330 Ohm para cada segmento individual del 7 segmentos. El 7 Seg utilizado es de Catodo común para facilitar las conexiones. Especificamente, los switches permitían una tensión de 3.3v, la cual era medida por las entradas de la tangnano, especificamente de 3.3v igualmente, las salidas del 7 segmentos, emitían una tensión de 1.8v.
+
+Hamming.
+Para la parte del circuito, básicamente es el mismo diseño, con la excepción de que en este caso tenemos 3 inputs adicionales a tomar en cuenta en los constraints
+
+
+
+Para la parte de los 7 segmentos, se utilizó la simplificación de ecuaciones booleanas con el metodo de mapas de Karnaugh.
+Esto se logró haciendo primero un excel con la tabla de verdad, especificamente considerando la sálida para cada segmento individual. 
+<img width="1167" height="479" alt="image" src="https://github.com/user-attachments/assets/5fbdc912-ba1e-4526-8bb0-77ae3969eeb3" />
+Una vez hecho esto se acomodaron los datos en el formato de los mapas de Karnaugh, y se simplificaron las ecuaciones agrupando los 1's en grupos de potencias de 2.
+<img width="1047" height="115" alt="image" src="https://github.com/user-attachments/assets/e85725c8-92fe-47a8-ba93-589800fa1543" />
+<img width="704" height="121" alt="image" src="https://github.com/user-attachments/assets/ba4b3c7c-2f6c-4716-976c-b92a633afbfe" />
+<img width="1082" height="161" alt="image" src="https://github.com/user-attachments/assets/14c1b493-beb3-4298-9674-8893e4087ed2" />
+De esta forma, haciendo uso de los mapas de Karnaugh se simplificaron las ecuaciones booleanas y se obtuvo la lógica para plantear la programación en Verilog.
 
 5. Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada
 hasta el manejo de los 7 segmentos.
@@ -16,9 +32,8 @@ hasta el manejo de los 7 segmentos.
 6. Análisis de consumo de recursos en la FPGA (LUTs, FFs, etc.) y del consumo de potencia que reporta
 las herramientas.
 
-7. Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas.
 
-*Simplificacion de ecuaciones booleanas
-Para la parte de los leds de 7 segmentos
+8. Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas.
+Los principales problemas hallados dentro del trabajo se debieron a la falta de experiencia con Verilog y con la tangnano 9k
 
 
