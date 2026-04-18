@@ -42,8 +42,10 @@ Los principales problemas hallados dentro del trabajo se debieron a la falta de 
 Para solucionar esto, nos fijamos en el template de los constraints para definir individualmente sus atributos.
 
 Adicionalmente, tuvimos que adaptar el diseño para usar jumpers hembra-macho, ya que originalmente al tratar de conectar la FPGA directo a la protoboard, vimos que las conexiones eran debiles, y al más mínimo movimiento, se desconectaban, por lo que tuvimos que hacer este cambio en el diseño físico.
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/764cdd0e-3cc0-499d-9069-6a08a7fe355a" />
-<img width="1215" height="1620" alt="image" src="https://github.com/user-attachments/assets/fd6a0c18-a183-4df8-984c-ef0d32280c5c" />
+<img width="517" height="520" alt="image" src="https://github.com/user-attachments/assets/e3524fdd-e4ba-47fe-8ca1-d91c53aa6a70" />
+<img width="1052" height="716" alt="image" src="https://github.com/user-attachments/assets/bafd488e-0d9d-42ca-804d-f79c84ec0013" />
+
+
 
 
 
