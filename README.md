@@ -51,13 +51,13 @@ Adicionalmente, tuvimos que adaptar el diseño para usar jumpers hembra-macho, y
 
 # Anillo Oscilador
 <img width="579" height="691" alt="image" src="https://github.com/user-attachments/assets/4bc5d9ad-16c2-4f5b-b47e-f8c5825da3a1" />
-A
+Este es el caso del anillo oscilador utilizando 5 inversores, con un tiempo de oscilación de 93.4 ns
 <img width="487" height="438" alt="image" src="https://github.com/user-attachments/assets/a3687497-dd0e-4859-969d-c4352cb2b324" />
-B
+Este es el caso del anillo oscilador utilizando 3 inversores, con un tiempo de oscilación de 68.4 ns
 <img width="601" height="484" alt="image" src="https://github.com/user-attachments/assets/0bebd65b-3a76-448b-93d5-08fb9303b81a" />
-C
+Este es el caso del anillo oscilador con 3 inversores incluyendo un cable de aproximadamente 3 m de largo. Se ve un incremento considerable en el retardo, teniendo un tiempo de oscilación de 85.4 ns
 <img width="550" height="409" alt="image" src="https://github.com/user-attachments/assets/dbad629f-2357-4b4a-a5ac-349eacf83166" />
-D
+Finalmente, tenemos el caso utilizando un solo inversor, con 17.3 ns de tiempo de oscilación.
 
 
 
